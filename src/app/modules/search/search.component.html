@@ -1,0 +1,38 @@
+<div class="mt-5">
+  <div class="row" *ngIf="user$ | async as user">
+    <div class="col-11">
+      <h1>Hello {{user.username}}</h1>
+    </div>
+    <div class="col-1">
+      <button mat-fab class="mb-2" [routerLink]="['/wishlist']">
+        <mat-icon>favorite</mat-icon>
+      </button>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col">
+      <mat-form-field class="full-width" appearance="fill">
+        <mat-label>Type To Search Book</mat-label>
+        <input matInput [(ngModel)]="searchText" (keyup)="search()">
+      </mat-form-field>
+    </div>
+  </div>
+
+  <div class="wrapper" *ngIf="bookI$ | async as bookI">
+    <div class="row">
+      <div class="col">
+        <mat-paginator [length]="bookI.totalItems" [pageSize]="20" (page)="pageChanged($event)">
+        </mat-paginator>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-4 mt-3" *ngFor="let book of bookI.items">
+        <app-book-item [book]="book">
+        </app-book-item>
+      </div>
+    </div>
+  </div>
+
+</div>
