@@ -1,0 +1,27 @@
+<div class="mt-5 text-center">
+  <app-card>
+    <div class="row">
+      <div class="col">
+        <h1>Welcome To Google Books</h1>
+      </div>
+    </div>
+
+    <form [formGroup]="loginForm" (ngSubmit)="submitForm()">
+      <div class="row mt-3">
+        <div class="col">
+          <mat-form-field class="full-width" appearance="outline">
+            <mat-label>Enter you name</mat-label>
+            <input matInput formControlName="username">
+            <mat-error>Username is required</mat-error>
+          </mat-form-field>
+        </div>
+      </div>
+
+      <div class="row mt-5">
+        <div class="col">
+          <button mat-raised-button color="primary" type="submit" [disabled]="!loginForm.valid">Login</button>
+        </div>
+      </div>
+    </form>
+  </app-card>
+</div>

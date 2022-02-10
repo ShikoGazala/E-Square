@@ -1,0 +1,11 @@
+<h1 mat-dialog-title>{{data.book.title}}</h1>
+<div mat-dialog-content>
+  <ul>
+    <li *ngFor="let key of keys">
+      <b>{{key | uppercase}}:</b> {{data.book[key]}}
+    </li>
+  </ul>
+</div>
+<div mat-dialog-actions>
+  <button mat-button mat-dialog-close>Close</button>
+</div>

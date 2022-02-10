@@ -1,0 +1,16 @@
+  <app-card class="wrapper" (click)="itemClicked()">
+    <mat-card-header>
+      <img mat-card-avatar [src]="book.imageLinks? book.imageLinks : 'assets/images/no-image-available.jpg'" />
+      <mat-card-title>{{book.title | truncate : 20}}</mat-card-title>
+    </mat-card-header>
+    <img mat-card-image [src]="book.imageLinks? book.imageLinks : 'assets/images/no-image-available.jpg'"
+      style="height:300px">
+    <mat-card-content class="mt-2">
+      <p>
+        {{book.description | truncate : 100}}
+      </p>
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-button (click)="likeClicked($event)">{{book.isWishlist? 'UNLIKE': 'Like'}}</button>
+    </mat-card-actions>
+  </app-card>
