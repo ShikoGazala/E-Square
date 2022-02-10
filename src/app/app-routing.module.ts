@@ -18,7 +18,7 @@ const routes: Routes = [
     path: RouterUrls.Search,
     loadChildren: () =>
       import('./modules/search/search.module').then((m) => m.SearchModule),
-    //canActivate: [AuthGuard],
+    canActivate: [AuthGuard],
   },
   {
     path: RouterUrls.Wishlist,
@@ -26,7 +26,7 @@ const routes: Routes = [
       import('./modules/wishlist/wishlist.module').then(
         (m) => m.WishlistModule
       ),
-    //canActivate: [AuthGuard],
+    canActivate: [AuthGuard],
   },
 ];
 

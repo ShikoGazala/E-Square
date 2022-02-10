@@ -5,7 +5,6 @@ import {
   OnInit,
 } from '@angular/core';
 import { MAT_DIALOG_DATA } from '@angular/material/dialog';
-import { Book } from '../../models/book.model';
 
 @Component({
   selector: 'app-book-details',

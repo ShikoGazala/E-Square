@@ -14,8 +14,6 @@ export class BooksService {
   constructor(private http: HttpClient) {}
 
   getBooks(searchText: string, pageNumber: number): Observable<BookI> {
-    console.log(pageNumber);
-
     const url = `${this.baseUrl}${searchText}&startIndex=${
       pageNumber * this.maxResults
     }`;
